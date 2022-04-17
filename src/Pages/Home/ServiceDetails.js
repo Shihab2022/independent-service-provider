@@ -2,7 +2,7 @@ import React from 'react';
 
 const ServiceDetails = ({data}) => {
     const {category,price,about,picture}=data
-    console.log(data)
+    // console.log(data)
     return (
         <div>
           <div className="flex flex-wrap -m-4">

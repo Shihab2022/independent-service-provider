@@ -12,6 +12,8 @@ const Service = () => {
     <div className="flex flex-col text-center w-full mb-20">
       <h1 className="md:text-4xl text-2xl title-font mb-4 text-gray-900 ">Hello! I'm Jonathon Kubb, a professional Photographer.</h1>
       <p className="lg:w-2/3 mx-auto leading-relaxed text-base">Based in New York, I specialize in landscape, advertorial and conceptual photography.</p>
+
+      <h1 className='mt-5 text-4xl  font-bold underline hover:text-yellow-500 text-red-700'>My Service</h1>
     </div>
   <div className='grid md:grid-cols-2 lg:px-28 md:px-2 px-5  lg:gap-10 gap-5'>
   {
