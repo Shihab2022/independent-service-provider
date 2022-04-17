@@ -14,7 +14,7 @@ const ServiceDetails = ({data}) => {
       <p className="mb-4">{about}</p>
       <p className=" text-xl"> </p>
       <p className="mb-4 text-xl">Per day : <span className="text-yellow-400 font-bold text-2xl">{price}</span></p>
-    <button className='px-10 text-white text-xl py-2 hover:shadow-lg rounded-full md:mr-5 bg-amber-500'>Hire</button>
+    <button className='px-10 text-white text-xl py-2 hover:shadow-lg rounded-full md:mr-5 bg-amber-600'>Hire Me</button>
     </div>
   </div>
 </div>

@@ -1,8 +1,9 @@
-import React from 'react';
-import headerLogo from '../../../Images/headerLogo.png'
+import React from "react";
+import { Link } from "react-router-dom";
+import headerLogo from "../../../Images/headerLogo.png";
 const Register = () => {
-    return (
-        <div>
+  return (
+    <div>
       <div className="flex items-center justify-center min-h-screen  bg-gray-200">
         <div className="px-8 py-6  text-left rounded-lg bg-zinc-800 shadow-lg">
           <div className="flex justify-center">
@@ -35,7 +36,9 @@ const Register = () => {
                 />
               </div>
               <div className="mt-4">
-                <label className="block text-yellow-600">Confirm Password</label>
+                <label className="block text-yellow-600">
+                  Confirm Password
+                </label>
                 <input
                   type="password"
                   placeholder="Confirm Password"
@@ -47,15 +50,22 @@ const Register = () => {
                   Register
                 </button>
               </div>
-<p className="text-white my-3 ">Already have an account ?<span className="text-blue-600 hover:underline cursor-pointer"> Login </span></p>
-              <div
-            className="flex items-center my-4 before:flex-1 before:border-t before:border-gray-300 before:mt-0.5 after:flex-1 after:border-t after:border-gray-300 after:mt-0.5"
-          >
-            <p className="text-center  text-white mx-4 mb-0">OR</p>
-          </div>
+              <p className="text-white my-3 ">
+                Already have an account ?
+                <Link
+                  to="/login"
+                  className="text-blue-600 hover:underline cursor-pointer"
+                >
+                  {" "}
+                  Login{" "}
+                </Link>
+              </p>
+              <div className="flex items-center my-4 before:flex-1 before:border-t before:border-gray-300 before:mt-0.5 after:flex-1 after:border-t after:border-gray-300 after:mt-0.5">
+                <p className="text-center  text-white mx-4 mb-0">OR</p>
+              </div>
               <div className="flex  items-baseline justify-between">
                 <button className="px-28 py-2 mt-4 text-white hover:bg-yellow-600 rounded-full bg-red-800">
-                Continue with Google
+                  Continue with Google
                 </button>
               </div>
             </div>
@@ -63,7 +73,7 @@ const Register = () => {
         </div>
       </div>
     </div>
-    );
+  );
 };
 
 export default Register;

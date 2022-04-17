@@ -1,5 +1,8 @@
-import { Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import About from './Pages/About/About';
+import Blog from './Pages/Blog/Blog';
+import CheckOut from './Pages/CheckOut/CheckOut';
 import HomePage from './Pages/Home/HomePage';
 import LoginPage from './Pages/Login/LoginPage/LoginPage';
 import Register from './Pages/Login/Register/Register';
@@ -9,13 +12,18 @@ import Header from './Pages/Shared/Header/Header';
 function App() {
   return (
     <div>
+ <Header></Header>
+      <Routes>
 
-      <Routes></Routes>
-    
-      <Header></Header>
-      <HomePage></HomePage>
-      <LoginPage></LoginPage>
-      <Register></Register>
+
+        <Route path='/' element={ <HomePage></HomePage>}></Route>
+        <Route path='/login' element={<LoginPage></LoginPage>}></Route>
+        <Route path='/register' element={<Register></Register>}></Route>
+        <Route path='/blog' element={<Blog></Blog>}></Route>
+        <Route path='/checkOut' element={<CheckOut></CheckOut>}></Route>
+        <Route path='/about' element={<About></About>}></Route>
+      </Routes>
+  
       <Footer></Footer>
       
     </div>
