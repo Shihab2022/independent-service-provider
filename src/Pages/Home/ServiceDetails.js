@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const ServiceDetails = ({data}) => {
     const {category,price,about,picture}=data
@@ -14,7 +15,7 @@ const ServiceDetails = ({data}) => {
       <p className="mb-4">{about}</p>
       <p className=" text-xl"> </p>
       <p className="mb-4 text-xl">Per day : <span className="text-yellow-400 font-bold text-2xl">{price}</span></p>
-    <button className='px-10 text-white text-xl py-2 hover:shadow-lg rounded-full md:mr-5 bg-amber-600'>Hire Me</button>
+    <Link to='/checkOut' className='px-10 text-white text-xl py-2 hover:shadow-lg rounded-full md:mr-5 bg-amber-600'>Hire Me</Link>
     </div>
   </div>
 </div>
