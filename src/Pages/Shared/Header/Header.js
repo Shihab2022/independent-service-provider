@@ -2,8 +2,8 @@ import React from 'react';
 import headerLogo from '../../../Images/headerLogo.png'
 const Header = () => {
     return (
-        <div >
-         <div className="text-white bg-zinc-800 ">
+        <div className="sticky top-0 " >
+         <div className="text-white  bg-zinc-800  ">
   <div className="container mx-auto md:px-28  flex flex-wrap  p-5 flex-col md:flex-row items-center">
   <img src={ headerLogo} alt="" />
     <nav className="md:ml-auto  flex flex-wrap items-center font-mono md:text-xl  justify-center">
