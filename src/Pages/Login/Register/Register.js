@@ -2,6 +2,16 @@ import React from "react";
 import { Link } from "react-router-dom";
 import headerLogo from "../../../Images/headerLogo.png";
 const Register = () => {
+
+    const registerYourDetails=e=>{
+    
+        const email = e.target.email.value
+        const password = e.target.password.value
+        const confirmPassword = e.target.confirmPassword.value
+        console.log(email,password,confirmPassword)
+        e.preventDefault();
+        
+        }
   return (
     <div>
       <div className="flex items-center justify-center min-h-screen  bg-gray-200">
@@ -12,15 +22,17 @@ const Register = () => {
           <h3 className="text-2xl text-yellow-600 font-bold text-center">
             Register your account
           </h3>
-          <form action="">
+          <form onSubmit={registerYourDetails}>
             <div className="mt-4">
               <div>
-                <label className="block text-yellow-600" for="email">
+                <label className="block text-yellow-600">
                   Email
                 </label>
                 <input
                   type="text"
                   placeholder="Email"
+                  name="email"
+                  required
                   className="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600"
                 />
                 <span className="text-xs tracking-wide text-red-600">
@@ -32,6 +44,8 @@ const Register = () => {
                 <input
                   type="password"
                   placeholder="Password"
+                  name='password'
+                  required
                   className="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600"
                 />
               </div>
@@ -42,6 +56,8 @@ const Register = () => {
                 <input
                   type="password"
                   placeholder="Confirm Password"
+                  name='confirmPassword'
+                  required
                   className="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600"
                 />
               </div>
@@ -50,7 +66,10 @@ const Register = () => {
                   Register
                 </button>
               </div>
-              <p className="text-white my-3 ">
+        
+            </div>
+          </form>
+          <p className="text-white my-3 ">
                 Already have an account ?
                 <Link
                   to="/login"
@@ -68,8 +87,6 @@ const Register = () => {
                   Continue with Google
                 </button>
               </div>
-            </div>
-          </form>
         </div>
       </div>
     </div>
