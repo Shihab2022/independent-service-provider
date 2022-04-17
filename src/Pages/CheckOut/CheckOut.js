@@ -85,14 +85,10 @@ const CheckOut = () => {
                   <div className="lg:w-6/12 flex items-center lg:rounded-r-lg rounded-b-lg bg-zinc-700 lg:rounded-bl-none">
                     <div className="text-white px-4 py-6 md:p-12 md:mx-6">
                       <h4 className="text-xl font-semibold mb-6">
-                        We are more than just a company
+                      Photography will help you record events and memories
                       </h4>
                       <p className="text-sm">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit, sed do eiusmod tempor incididunt ut labore et
-                        dolore magna aliqua. Ut enim ad minim veniam, quis
-                        nostrud exercitation ullamco laboris nisi ut aliquip ex
-                        ea commodo consequat.
+                      Photography allows you to create images of special events, times, and places. It lets you record the specifics of an event – and it also allows you to share that event with friends and family, long after it’s done and gone.So,If you will want to record events . I will help you .
                       </p>
                     </div>
                   </div>
