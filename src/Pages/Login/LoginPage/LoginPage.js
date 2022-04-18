@@ -1,5 +1,5 @@
 import React from "react";
-import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import { useSignInWithEmailAndPassword, useSignInWithGoogle } from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
 import headerLogo from "../../../Images/headerLogo.png";
@@ -13,18 +13,20 @@ const LoginPage = () => {
 
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
-
+    const [signInWithGoogle, googlUser, googlLoading, googleError] = useSignInWithGoogle(auth);
   const submitYourDetails = (e) => {
     const email = e.target.email.value;
     const password = e.target.password.value;
     signInWithEmailAndPassword(email, password);
     e.preventDefault();
   };
-  
-  if (loading) {
+  const continueWithGoogle=()=>{
+    signInWithGoogle()
+  }
+  if (loading ||googlLoading) {
     return <Loading></Loading>;
   }
-  if (user) {
+  if (user || googlUser) {
     navigate(from, { replace: true });
   }
   // // console.log(user)
@@ -64,6 +66,7 @@ const LoginPage = () => {
               </div>
               <p className="text-rose-600 my-2">
                 {error ? error?.message : ""}
+                {googleError ? googleError?.message : ""}
               </p>
               <div className="flex items-baseline justify-between">
                 <button className="px-40 py-2 mt-4 text-white bg-yellow-600 rounded-full hover:bg-red-600">
@@ -86,7 +89,7 @@ const LoginPage = () => {
             <p className="text-center  text-white mx-4 mb-0">OR</p>
           </div>
           <div className="flex  items-baseline justify-between">
-            <button className="px-24 py-2 mt-4 text-white hover:bg-yellow-600 rounded-full bg-red-800">
+            <button onClick={continueWithGoogle} className="px-24 py-2 mt-4 text-white hover:bg-yellow-600 rounded-full bg-red-800">
               Continue with Google
             </button>
           </div>

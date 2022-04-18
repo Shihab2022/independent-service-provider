@@ -4,35 +4,35 @@
       "picture": "https://i.ibb.co/VNYt9Hg/weadding.jpg",
       "price": "$500",
       "category": "Wedding Photography",
-      "about": "Nulla vitae libero, a pharetra augue. Integer posuere a ante venenatis condimentum. Donec id elit non mi porta gravida metus."
+      "about": " Between breathtaking occasions and the candid every day — remember it all with photography that makes every memory feel life-like and that much sweeter!"
     },
     {
       "id": "625b8b3a5f4799d8445f45b5f8e",
       "picture": "https://i.ibb.co/7K11hcD/fashion.jpg",
       "price": "$100",
       "category": "Fashion Photography",
-      "about": "Fusce dapibus commodo, tortor mauris condimentum nibh, ut fermentum massa. Maecenas sed diam eget risus varius blandit."
+      "about": "It is one of the biggest, most profitable areas of photography. Whether  Paris, or London, the major fashion houses and fashion magazines are looking for fashion photographers.."
     },
     {
       "id": "625b8b3af1216a9b013452b2be5",
       "picture": "https://i.ibb.co/ScFkHTR/birthhday.jpg",
       "price": "$200",
       "category": "Birth Photography",
-      "about": "Vestibulum id ligula porta euismod semper. Aenean lacinia bibendum vestibulum. Cum sociis natoque penatibus et parturient."
+      "about": "There is nothing quite like birth photography.  I can tell you from my experiences, it is an emotion-filled, once in a lifetime chance to witness a miracle. "
     },
     {
       "id": "625b8b3a05c9cfa4c9215fg5f85ca",
       "picture": "https://i.ibb.co/G2zsBY3/food.jpg",
       "price": "$20",
       "category": "Food Photography",
-      "about": "Aenean eu leo quam. Pellente ornare sem lacinia quam venenatis vestibulum sagittis montes, nascetur ridiculus mus."
+      "about": "At its most basic, food photography is a way to capture an image of a great meal. But it’s much more involved than simply pointing, clicking and sharing."
     },
     {
       "id": "625b8b3aad0489dgd95be8d9f2b",
       "picture": "https://i.ibb.co/7pn2ffj/jewelery.jpg",
       "price": "$150",
       "category": "Jewelery Photography",
-      "about": "Nullam id dolor id nibh ultricies vehicula ut id elit. Vestibulum id ligula porta felis sit amet non magna sit amet tortor sagittis."
+      "about": "Great! I can help you exist and join the rest of the jewelers in today’s visual world where visual presentation consisting of quality product images is key.."
     }
     ,
     {
@@ -40,6 +40,6 @@
       "picture": "https://i.ibb.co/42MJh8h/drink.jpg",
       "price": "$30",
       "category": "Drink Photography",
-      "about": "Morbi leo risus, porta ac consectetur ac at eros. Cras mattis consectetur purus. Cras mattis consectetur purus fermentum."
+      "about": "You know drink photography is also a part of food photography. The gear a photographer uses in food photography is also applicable for taking drink photos.."
     }
   ]

@@ -26,7 +26,7 @@ const Header = () => {
       <CustomLink to='/blog' className="mr-5 hover:text-amber-500">Blogs</CustomLink>
       <CustomLink to='/about' className="mr-5 hover:text-amber-500">About</CustomLink>
       {
-        user ? <button  onClick={LogOutUser} className='px-4 text-black py-2 rounded-full md:mr-5 bg-rose-700'>Log Out</button>
+        user ? <button  onClick={LogOutUser} className='px-4 text-black py-2 rounded-full md:mr-5 bg-rose-700'>LogOut</button>
         :
         <Link to='/login' className='px-6 text-black py-2 rounded-full md:mr-5 bg-amber-300'>Login</Link>
         }
