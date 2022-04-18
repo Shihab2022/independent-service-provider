@@ -1,8 +1,20 @@
+import { signOut } from 'firebase/auth';
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
+import auth from '../../../firebase.init';
 import headerLogo from '../../../Images/headerLogo.png'
 import CustomLink from '../../Login/CustomLink/CustomLink';
+
 const Header = () => {
+  const [user]=useAuthState(auth)
+ 
+
+
+  const LogOutUser=()=> {
+    signOut(auth)
+    
+  }
     return (
         <div className="sticky top-0 " >
          <div className="text-white  bg-zinc-800  ">
@@ -13,7 +25,14 @@ const Header = () => {
       <CustomLink to='/checkOut' className="mr-5 hover:text-amber-500">Check Out</CustomLink>
       <CustomLink to='/blog' className="mr-5 hover:text-amber-500">Blogs</CustomLink>
       <CustomLink to='/about' className="mr-5 hover:text-amber-500">About</CustomLink>
-      <Link to='/login' className='px-6 text-black py-2 rounded-full md:mr-5 bg-amber-300'>Login</Link>
+      {
+        user ? <button  onClick={LogOutUser} className='px-4 text-black py-2 rounded-full md:mr-5 bg-rose-700'>Log Out</button>
+        :
+        <Link to='/login' className='px-6 text-black py-2 rounded-full md:mr-5 bg-amber-300'>Login</Link>
+        }
+     
+      
+      
     </nav>
 
   </div>

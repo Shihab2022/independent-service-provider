@@ -25,6 +25,7 @@ const Register = () => {
         e.preventDefault();
         
         }
+        
         if(loading){
           return <Loading></Loading>
         }
@@ -78,9 +79,12 @@ const Register = () => {
                   className="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600"
                 />
               </div>
+              <p className='text-rose-600 my-2'>
               {
-                error ? error : ''
+                error ? error.message : ''
               }
+              </p>
+              
               <div className="flex items-baseline justify-between">
                 <button className="px-40 py-2 mt-4 text-white bg-yellow-600 rounded-full hover:bg-red-600">
                   Register

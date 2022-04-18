@@ -1,16 +1,44 @@
 import React from "react";
+import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
+import auth from "../../../firebase.init";
 import headerLogo from "../../../Images/headerLogo.png";
+import Loading from "../../Shared/Loading/Loading";
 const LoginPage = () => {
+  const [
+    signInWithEmailAndPassword,
+    user,
+    loading,
+    error,
+  ] = useSignInWithEmailAndPassword(auth);
 
 const submitYourDetails=e=>{
     
 const email = e.target.email.value
 const password = e.target.password.value
-console.log(email,password)
+signInWithEmailAndPassword(email,password)
+
 e.preventDefault();
 
 }
+if (error) {
+  return (
+    <div>
+      <p>Error: {error.message}</p>
+    </div>
+  );
+}
+if(loading){
+  return <Loading></Loading>
+}
+if (user) {
+  return (
+    <div>
+      <p>Signed In User: {user.email}</p>
+    </div>
+  );
+}
+// // console.log(user)
 
 
   return (
@@ -49,6 +77,11 @@ e.preventDefault();
                   className="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600"
                 />
               </div>
+             <p className='text-rose-600 my-2'>
+             {
+                error ? error?.message : ''
+              }
+             </p>
               <div className="flex items-baseline justify-between">
                 <button className="px-40 py-2 mt-4 text-white bg-yellow-600 rounded-full hover:bg-red-600">
                   Login
