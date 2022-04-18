@@ -34,36 +34,36 @@ const AboutMe = () => {
               <div className="h-full  py-8 rounded">
                 <h1 className="my-8 text-xl font-semibold">MY SKILLS</h1>
             
-                <div class="mb-2 text-base font-medium">Photoshop - 90%</div>
-                <div class="w-full mb-5 bg-gray-300 rounded-md h-4">
+                <div className="mb-2 text-base font-medium">Photoshop - 90%</div>
+                <div className="w-full mb-5 bg-gray-300 rounded-md h-4">
                   <div
-                    class="bg-gray-600 h-4  rounded-md"
+                    className="bg-gray-600 h-4  rounded-md"
                     style={{ width: "90%" }}
                   ></div>
                 </div>
 
-                <div class="mb-2 text-base font-medium ">Final Cut - 80%</div>
-                <div class="w-full mb-5 bg-gray-200 rounded-md h-4">
+                <div className="mb-2 text-base font-medium ">Final Cut - 80%</div>
+                <div className="w-full mb-5 bg-gray-200 rounded-md h-4">
                   <div
-                    class="bg-blue-600 rounded-md h-4"
+                    className="bg-blue-600 rounded-md h-4"
                     style={{ width: "80%" }}
                   ></div>
                 </div>
 
-                <div class="mb-2 text-base font-medium ">Studio Photography 85%</div>
-                <div class="w-full mb-5 bg-gray-200 rounded-md h-4">
+                <div className="mb-2 text-base font-medium ">Studio Photography 85%</div>
+                <div className="w-full mb-5 bg-gray-200 rounded-md h-4">
                   <div
-                    class="bg-rose-600 rounded-md h-4"
+                    className="bg-rose-600 rounded-md h-4"
                     style={{ width: "85%" }}
                   ></div>
                 </div>
 
-                <div class="mb-2 text-base font-medium ">
+                <div className="mb-2 text-base font-medium ">
                 Motion Video 75%
                 </div>
-                <div class="w-full mb-5 bg-gray-200 rounded-md h-4">
+                <div className="w-full mb-5 bg-gray-200 rounded-md h-4">
                   <div
-                    class="bg-green-600 rounded-md h-4"
+                    className="bg-green-600 rounded-md h-4"
                     style={{ width: "75%" }}
                   ></div>
                 </div>
