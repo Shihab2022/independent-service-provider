@@ -15,16 +15,15 @@ const [email,setEmail]=useState('')
   const handelEmail=e=>{
     setEmail(e.target.value)
   }
-  // console.log(email)
+
 
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
-    const [sendPasswordResetEmail, sending, resetError] = useSendPasswordResetEmail(
+    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(
       auth
     );
     const [signInWithGoogle, googlUser, googlLoading, googleError] = useSignInWithGoogle(auth);
   const submitYourDetails = (e) => {
-    // console.log(e)
     const email = e.target.email.value;
     const password = e.target.password.value;
     signInWithEmailAndPassword(email, password);
@@ -34,8 +33,7 @@ const [email,setEmail]=useState('')
     signInWithGoogle()
   }
   const reSetYourPassword=async (e)=>{
-    // const email = e.target.email.value;
-    console.log(email)
+  
     if(email){
       await sendPasswordResetEmail(email);
       toast('Sent email');
@@ -45,13 +43,12 @@ const [email,setEmail]=useState('')
     }
     
   }
-  if (loading ||googlLoading) {
+  if (loading ||googlLoading || sending) {
     return <Loading></Loading>;
   }
   if (user || googlUser) {
     navigate(from, { replace: true });
   }
-  // // console.log(user)
 
   return (
     <div>
@@ -110,7 +107,7 @@ const [email,setEmail]=useState('')
               Register{" "}
             </Link>
           </p>
-          <button onClick={reSetYourPassword} className="text-rose-600 hover:underline">Password Reset</button>
+          <button onClick={reSetYourPassword} className="text-rose-600 hover:underline"> Reset Password</button>
         </div>
           <div className="flex items-center my-4 before:flex-1 before:border-t before:border-gray-300 before:mt-0.5 after:flex-1 after:border-t after:border-gray-300 after:mt-0.5">
             <p className="text-center  text-white mx-4 mb-0">OR</p>

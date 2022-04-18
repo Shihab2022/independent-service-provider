@@ -4,7 +4,7 @@ const Slider = () => {
     return (
         <div className="relative">
             <div>
-            <img src={slider} alt="" />
+            <img className="w-full" src={slider} alt="" />
             </div>
             <div className="absolute text-center md:top-[50%] md:right-[35%] top-[15%] right-[20%] text-white ">
             <h1 className="md:text-6xl text-2xl font-mono font-bold">JONATHAN KUBB</h1> 

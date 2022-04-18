@@ -9,7 +9,7 @@ const Service = () => {
         <div className="bg-emerald-50">
             <section className="text-gray-600 md:pb-0 pb-10 body-font">
   <div className="container lg:px-5  lg:py-14  mx-auto">
-    <div className="flex flex-col text-center w-full mb-20">
+    <div className="flex flex-col text-center md:mt-0 mt-5 w-full mb-20">
       <h1 className="md:text-4xl text-2xl title-font mb-4 text-gray-900 ">Hello! I'm Jonathon Kubb, a professional Photographer.</h1>
       <p className="lg:w-2/3 mx-auto leading-relaxed text-base">Based in New York, I specialize in landscape, advertorial and conceptual photography.</p>
 

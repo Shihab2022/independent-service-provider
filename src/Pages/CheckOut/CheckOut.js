@@ -1,5 +1,11 @@
 import React from "react";
 import headerLogo from "../../Images/headerLogo.png";
+import { ToastContainer, toast } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
+const submitYourInfo=()=> {
+  toast("Thank's for getting your information !");
+}
 
 const CheckOut = () => {
   return (
@@ -22,7 +28,7 @@ const CheckOut = () => {
                           We are The Lotus Team
                         </h4>
                       </div>
-                      <form>
+                      <form   >
                         <p className="mb-4">
                           Please Get Your full information .
                         </p>
@@ -32,6 +38,7 @@ const CheckOut = () => {
                             className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                             id="exampleFormControlInput1"
                             placeholder=" Your Name"
+                            required
                           />
                         </div>
                         <div className="mb-4">
@@ -72,12 +79,11 @@ const CheckOut = () => {
                             type="button"
                             data-mdb-ripple="true"
                             data-mdb-ripple-color="light"
+                            onClick={submitYourInfo}
                           >
                             Submit
                           </button>
-                          <a className="text-gray-500" href="#!">
-                            Forgot password?
-                          </a>
+                        
                         </div>
                       </form>
                     </div>
@@ -97,6 +103,7 @@ const CheckOut = () => {
             </div>
           </div>
         </div>
+        <ToastContainer />
       </section>
     </div>
   );
