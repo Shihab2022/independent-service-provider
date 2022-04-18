@@ -2,18 +2,19 @@
 ## KUBB PHOTOGRAPHY
 
 
-Open [http://localhost:3000](http://localhost:3000) 
+## My live project link : 
+ [https://kubb-photography.web.app/](https://kubb-photography.web.app/) 
 ### Five features
 
 - This project have an sign in an register fetcher .
 
 - Have an protected route . This route user can not going without login .
 
--Describe my skill and  my service .
+- Describe my skill and  my service .
 
--Have an header and footer section .
+- Have an header and footer section .
 
--An blog page .This page  have some blog .
+- An blog page .This page  have some blog .
 
 
 
@@ -35,3 +36,5 @@ Open [http://localhost:3000](http://localhost:3000)
 - React firebase hook 
 
 - React router
+
+- React toast 
