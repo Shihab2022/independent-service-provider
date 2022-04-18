@@ -1,17 +1,34 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import headerLogo from "../../../Images/headerLogo.png";
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import auth from '../../../firebase.init'
+import Loading from "../../Shared/Loading/Loading";
 const Register = () => {
 
+  const [
+    createUserWithEmailAndPassword,
+    user,
+    loading,
+    error,
+  ] = useCreateUserWithEmailAndPassword(auth);
     const registerYourDetails=e=>{
     
         const email = e.target.email.value
         const password = e.target.password.value
         const confirmPassword = e.target.confirmPassword.value
         console.log(email,password,confirmPassword)
+
+
+        createUserWithEmailAndPassword(email,password)
+
         e.preventDefault();
         
         }
+        if(loading){
+          return <Loading></Loading>
+        }
+        console.log(user,error)
   return (
     <div>
       <div className="flex items-center justify-center min-h-screen  bg-gray-200">
@@ -61,6 +78,9 @@ const Register = () => {
                   className="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600"
                 />
               </div>
+              {
+                error ? error : ''
+              }
               <div className="flex items-baseline justify-between">
                 <button className="px-40 py-2 mt-4 text-white bg-yellow-600 rounded-full hover:bg-red-600">
                   Register
