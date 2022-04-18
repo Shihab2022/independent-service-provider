@@ -1,20 +1,30 @@
-import React from "react";
-import { useSignInWithEmailAndPassword, useSignInWithGoogle } from "react-firebase-hooks/auth";
+import React, { useState } from "react";
+import { useSignInWithEmailAndPassword, useSignInWithGoogle ,useSendPasswordResetEmail } from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
 import headerLogo from "../../../Images/headerLogo.png";
 import Loading from "../../Shared/Loading/Loading";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const LoginPage = () => {
-
+const [email,setEmail]=useState('')
   let navigate = useNavigate();
   let location = useLocation();
   let from = location.state?.from?.pathname || "/";
+  const handelEmail=e=>{
+    setEmail(e.target.value)
+  }
+  // console.log(email)
 
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
+    const [sendPasswordResetEmail, sending, resetError] = useSendPasswordResetEmail(
+      auth
+    );
     const [signInWithGoogle, googlUser, googlLoading, googleError] = useSignInWithGoogle(auth);
   const submitYourDetails = (e) => {
+    // console.log(e)
     const email = e.target.email.value;
     const password = e.target.password.value;
     signInWithEmailAndPassword(email, password);
@@ -22,6 +32,18 @@ const LoginPage = () => {
   };
   const continueWithGoogle=()=>{
     signInWithGoogle()
+  }
+  const reSetYourPassword=async (e)=>{
+    // const email = e.target.email.value;
+    console.log(email)
+    if(email){
+      await sendPasswordResetEmail(email);
+      toast('Sent email');
+    }
+    else{
+      toast('Please enter your email')
+    }
+    
   }
   if (loading ||googlLoading) {
     return <Loading></Loading>;
@@ -50,6 +72,7 @@ const LoginPage = () => {
                   type="text"
                   placeholder="Email"
                   name="email"
+                  onBlur={handelEmail}
                   required
                   className="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600"
                 />
@@ -75,7 +98,9 @@ const LoginPage = () => {
               </div>
             </div>
           </form>
-          <p className="text-white my-3 ">
+          <ToastContainer />
+        <div className="flex justify-between ">
+        <p className="text-white my-3 ">
             Don't have an account?
             <Link
               to="/register"
@@ -85,6 +110,8 @@ const LoginPage = () => {
               Register{" "}
             </Link>
           </p>
+          <button onClick={reSetYourPassword} className="text-rose-600 hover:underline">Password Reset</button>
+        </div>
           <div className="flex items-center my-4 before:flex-1 before:border-t before:border-gray-300 before:mt-0.5 after:flex-1 after:border-t after:border-gray-300 after:mt-0.5">
             <p className="text-center  text-white mx-4 mb-0">OR</p>
           </div>
